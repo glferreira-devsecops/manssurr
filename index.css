@@ -1,8 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Global smooth scroll behavior is already on html tag, adding here just in case */
+/* 
+  Os estilos do Tailwind estão sendo carregados via CDN no index.html.
+  Este arquivo permanece vazio para evitar erros de build com PostCSS.
+*/
 html {
   scroll-behavior: smooth;
 }
