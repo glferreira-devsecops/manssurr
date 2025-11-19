@@ -53,6 +53,7 @@ export const Header: React.FC = () => {
             <button
               onClick={toggleMenu}
               className="text-slate-600 hover:text-medical-900 focus:outline-none p-2"
+              aria-label="Abrir menu"
             >
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -62,7 +63,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-slate-100">
+        <div className="md:hidden bg-white border-t border-slate-100 max-h-[calc(100vh-5rem)] overflow-y-auto shadow-lg">
           <div className="px-4 pt-2 pb-6 space-y-2">
             {navLinks.map((link) => (
               <a
@@ -74,14 +75,16 @@ export const Header: React.FC = () => {
                 {link.name}
               </a>
             ))}
-            <a
-              href={`https://wa.me/${DOCTOR_INFO.whatsappClean}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-center mt-4 bg-medical-600 text-white px-4 py-3 rounded-md font-bold"
-            >
-              Agendar no WhatsApp
-            </a>
+            <div className="pt-4">
+              <a
+                href={`https://wa.me/${DOCTOR_INFO.whatsappClean}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-medical-600 text-white px-4 py-3 rounded-md font-bold shadow-sm active:bg-medical-700"
+              >
+                Agendar no WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       )}
