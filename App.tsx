@@ -2,7 +2,6 @@ import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
-import { About } from './components/About';
 import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
 import { FloatingCTA } from './components/FloatingCTA';
@@ -20,7 +19,6 @@ function App() {
       <main id="main-content">
         <Hero />
         <Services />
-        <About />
         <ContactForm />
       </main>
       <Footer />

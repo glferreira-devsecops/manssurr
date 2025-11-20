@@ -1,103 +1,94 @@
-import React from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, CheckCircle2, User, Star, ShieldCheck } from 'lucide-react';
 import { DOCTOR_INFO } from '../constants';
 
 export const Hero: React.FC = () => {
+  const [imageError, setImageError] = useState(false);
+
+  // URL de imagem profissional
+  const HERO_IMAGE_URL = "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1000&auto=format&fit=crop";
+
   return (
-    <section id="home" className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-gradient-to-b from-slate-50 to-white">
+    <section id="home" className="relative pt-28 pb-20 md:pt-36 md:pb-32 overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-medical-50 via-white to-slate-50">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-medical-100/30 rounded-full blur-3xl opacity-60 mix-blend-multiply"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[700px] h-[700px] bg-slate-100/60 rounded-full blur-3xl opacity-50"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
           
-          <div className="lg:col-span-7 mb-12 lg:mb-0 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-medical-100 text-medical-800 text-xs md:text-sm font-semibold mb-8 shadow-soft hover:shadow-md transition-shadow duration-300 cursor-default">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-              </span>
-              Avaliação Online Gratuita Disponível
-            </div>
+          <div className="lg:col-span-7 mb-16 lg:mb-0 text-center lg:text-left">
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 leading-[1.15] mb-6 tracking-tight">
-              Excelência em <br className="hidden lg:block" />
+            <h1 className="text-4xl md:text-5xl lg:text-[4.2rem] font-serif font-bold text-slate-900 leading-[1.1] mb-6 tracking-tight">
+              Dr. Mansur <br />
               <span className="text-medical-600 relative inline-block">
-                Pequenas Cirurgias
-                <svg className="absolute w-full h-3 -bottom-1 left-0 text-medical-200 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" opacity="0.6" />
-                </svg>
-              </span> e Biópsias
+                Biópsias.com
+              </span>
             </h1>
             
-            <p className="text-base md:text-lg text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-              <strong className="font-medium text-slate-800">{DOCTOR_INFO.experience}.</strong> Atendimento humanizado, pontual e seguro no Rio de Janeiro. Resolva nódulos, cistos e verrugas com um especialista sênior.
-            </p>
+            <div className="text-base md:text-lg text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed space-y-4">
+              <p>
+                <strong className="font-semibold text-slate-800 block text-xl mb-2">{DOCTOR_INFO.education}.</strong>
+                {DOCTOR_INFO.experience}, {DOCTOR_INFO.crm}.
+              </p>
+            </div>
+
+            {/* Destaque solicitado */}
+            <div className="bg-green-50 border border-green-100 p-4 rounded-xl mb-10 max-w-xl mx-auto lg:mx-0 shadow-sm">
+              <p className="text-green-800 font-bold text-sm md:text-base flex items-center justify-center lg:justify-start gap-2">
+                <span className="flex h-3 w-3 rounded-full bg-green-500 animate-pulse"></span>
+                Faça sua consulta on line para avalição sem compromisso gratuitamente
+              </p>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a 
                 href={`https://wa.me/${DOCTOR_INFO.whatsappClean}?text=Olá,%20gostaria%20de%20uma%20avaliação%20gratuita.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-medical-600 text-white rounded-xl font-semibold hover:bg-medical-700 transition-all shadow-lg shadow-medical-600/20 hover:shadow-medical-600/30 flex items-center justify-center gap-2 active:scale-[0.98] group"
+                className="px-8 py-4 bg-green-600 text-white rounded-xl font-bold hover:bg-green-700 transition-all shadow-lg shadow-green-600/30 hover:-translate-y-1 flex items-center justify-center gap-2 group"
               >
-                Agendar Avaliação
+                Falar no WhatsApp
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a 
                 href="#services"
-                className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-semibold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm hover:shadow-md flex items-center justify-center active:scale-[0.98]"
+                className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all shadow-sm flex items-center justify-center"
               >
-                Ver Procedimentos
+                Ver Serviços
               </a>
             </div>
 
-            <div className="mt-12 pt-8 border-t border-slate-100 flex flex-wrap justify-center lg:justify-start gap-x-8 gap-y-4 text-sm text-slate-600">
-              <div className="flex items-center gap-2.5">
-                <div className="bg-green-100 p-1 rounded-full text-green-700">
-                  <CheckCircle2 size={14} strokeWidth={3} />
-                </div>
-                <span className="font-medium text-slate-700">{DOCTOR_INFO.crm}</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <div className="bg-green-100 p-1 rounded-full text-green-700">
-                  <CheckCircle2 size={14} strokeWidth={3} />
-                </div>
-                <span className="font-medium text-slate-700">40+ Anos de Experiência</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                 <div className="bg-green-100 p-1 rounded-full text-green-700">
-                  <CheckCircle2 size={14} strokeWidth={3} />
-                </div>
-                <span className="font-medium text-slate-700">Formação UFRJ</span>
-              </div>
+            <div className="mt-12 pt-8 border-t border-slate-200/60 flex flex-wrap justify-center lg:justify-start gap-x-8 gap-y-4 text-sm text-slate-600">
+               <div className="flex items-center gap-2">
+                 <ShieldCheck size={18} className="text-medical-600" />
+                 <span className="font-medium">{DOCTOR_INFO.crm}</span>
+               </div>
+               <div className="flex items-center gap-2">
+                 <Star size={18} className="text-medical-600" />
+                 <span className="font-medium">40+ Anos de Experiência</span>
+               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative mx-auto max-w-md lg:max-w-none w-full mt-8 lg:mt-0">
-            <div className="absolute inset-0 bg-medical-600 rounded-[2.5rem] rotate-3 opacity-5 blur-3xl transform translate-x-4 translate-y-4"></div>
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white group h-[450px] md:h-[580px]">
-              {/* Image optimized for "Senior Doctor" look */}
-              <img 
-                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800" 
-                alt="Dr. J. Mansur - Médico Cirurgião Sênior" 
-                className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
-                loading="eager"
-              />
-              
-              {/* Subtle gradient for text legibility */}
-              <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
-              
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <p className="font-serif text-3xl font-bold tracking-wide mb-1">{DOCTOR_INFO.name}</p>
-                  <div className="flex flex-wrap items-center gap-3 mt-3">
-                     <span className="text-xs font-bold uppercase tracking-widest bg-white/20 text-white px-3 py-1 rounded-full backdrop-blur-md border border-white/30">
-                       Cirurgião Responsável
-                     </span>
-                     <span className="text-xs text-slate-300 font-normal tracking-wider border-l border-white/30 pl-3">
-                       {DOCTOR_INFO.crm}
-                     </span>
-                  </div>
+          {/* Image Section */}
+          <div className="lg:col-span-5 relative mx-auto w-full max-w-md lg:max-w-full">
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-white border border-slate-100 aspect-[4/5] lg:h-[600px] flex items-center justify-center group">
+              {!imageError ? (
+                <img 
+                  src={HERO_IMAGE_URL} 
+                  alt="Médico especialista Dr. Mansur" 
+                  className="w-full h-full object-cover"
+                  onError={() => setImageError(true)}
+                />
+              ) : (
+                <div className="flex flex-col items-center justify-center p-10 text-center bg-slate-50 w-full h-full">
+                  <User size={80} className="text-medical-300 mb-4" />
+                  <h3 className="font-serif text-2xl font-bold text-slate-800">Dr. J. Mansur</h3>
                 </div>
-              </div>
+              )}
             </div>
           </div>
 

@@ -3,44 +3,45 @@ import {
   Microscope, 
   Activity, 
   FileText, 
-  Stethoscope 
+  Stethoscope,
+  PlusCircle
 } from 'lucide-react';
 import { DoctorInfo, ServiceItem } from './types';
 
 export const DOCTOR_INFO: DoctorInfo = {
   name: "Dr. J. Mansur",
   crm: "CRM-RJ 34.702-6",
-  experience: "Mais de 40 anos de vasta experiência em medicina cirúrgica",
+  experience: "Com mais de 40 anos de vasta experiência em medicina cirúrgica",
   education: "Médico formado por uma universidade federal do Rio de Janeiro",
-  address: "Rua Oto de Alencar, nº 35, Maracanã, Rio de Janeiro",
-  phone: "(21) 98822-0502",
+  address: "Rua Oto de Alencar, nº 35, Maracanã",
+  phone: "21 98822-0502",
   whatsappClean: "5521988220502"
 };
 
 export const SERVICES: ServiceItem[] = [
   {
-    title: "Remoção de Nódulos e Verrugas",
-    description: "Retirada segura de lesões em qualquer lugar do corpo, incluindo face, couro cabeludo e órgãos genitais.",
+    title: "Retirada de nódulos ou verrugas",
+    description: "Retirada de nódulos ou verrugas em qualquer lugar do corpo, como face, órgãos genitais, couro cabeludo, pele em geral, etc.",
     icon: Scissors
   },
   {
     title: "Biópsias Superficiais",
-    description: "Procedimentos precisos para coleta de material e análise histopatológica de patologias.",
+    description: "Realização de biópsias superficiais para análise histopatológica da patologia.",
     icon: Microscope
   },
   {
     title: "Cirurgias Ambulatoriais",
-    description: "Realização de todo tipo de pequena cirurgia com anestesia local e rápida recuperação.",
+    description: "Realizamos todo tipo de cirurgia ambulatorial.",
     icon: Stethoscope
   },
   {
-    title: "Laudos Histopatológicos",
-    description: "Envio completo do material coletado para exame laboratorial e emissão de laudo detalhado.",
+    title: "Exame e Laudo",
+    description: "Envio do material para exame e laudo histopatológico.",
     icon: FileText
   },
   {
-    title: "Dermatologia Cirúrgica",
-    description: "Tratamento de lesões de pele em geral com foco estético e funcional.",
-    icon: Activity
+    title: "Outras",
+    description: "Consulte-nos para outros procedimentos.",
+    icon: PlusCircle
   }
 ];
