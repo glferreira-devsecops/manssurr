@@ -5,8 +5,9 @@ import { DOCTOR_INFO } from '../constants';
 export const Hero: React.FC = () => {
   const [imageError, setImageError] = useState(false);
 
-  // URL da imagem do médico (deve estar na pasta public)
-  const HERO_IMAGE_URL = "/img_5050.jpg";
+  // URL da imagem do médico carregada diretamente do GitHub (Raw)
+  // Utilizando o commit hash específico fornecido pelo usuário
+  const HERO_IMAGE_URL = "https://raw.githubusercontent.com/glferreira-devsecops/manssurr/1b190ff8098e9140df2e4dc23eef29c1da9776a8/public/drmansur.jpeg";
 
   return (
     <section id="home" className="relative pt-28 pb-20 md:pt-36 md:pb-32 overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-medical-50 via-white to-slate-50">

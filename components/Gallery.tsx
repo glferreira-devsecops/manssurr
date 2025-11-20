@@ -1,16 +1,43 @@
 import React from 'react';
 
 export const Gallery: React.FC = () => {
-  // Imagens fornecidas e suas legendas associadas (devem estar na pasta public)
-  const clinicalCases = [
-    { url: "/img_5042.jpg", caption: "Lipoma" },
-    { url: "/img_5035.jpg", caption: "Sinal / Nevo" },
-    { url: "/img_5048.jpg", caption: "Lesão Cutânea" },
-    { url: "/img_5038.jpg", caption: "Verrugas" },
-    { url: "/img_5040.jpg", caption: "Nódulo" },
-    { url: "/img_5046.jpg", caption: "Cisto Facial" },
-    { url: "/img_5045.jpg", caption: "Lesão de Pele" },
-    { url: "/img_5043.jpg", caption: "Dermatite" }
+  // Utilizando URLs RAW completas e específicas para garantir o carregamento correto,
+  // especialmente para arquivos com acentuação ou espaços.
+  const galleryImages = [
+    { 
+      // Convertido de blob para raw, mantendo a codificação exata do caractere 'â' (%CC%82)
+      url: "https://raw.githubusercontent.com/glferreira-devsecops/manssurr/1b190ff8098e9140df2e4dc23eef29c1da9776a8/public/1%20Ca%CC%82ncer%20de%20pele.jpg", 
+      caption: "Câncer de Pele" 
+    },
+    { 
+      // Arquivo 6 Verrugas.jpg
+      url: "https://raw.githubusercontent.com/glferreira-devsecops/manssurr/1b190ff8098e9140df2e4dc23eef29c1da9776a8/public/6%20Verrugas.jpg", 
+      caption: "Verrugas" 
+    },
+    { 
+      url: "https://raw.githubusercontent.com/glferreira-devsecops/manssurr/1b190ff8098e9140df2e4dc23eef29c1da9776a8/public/7%20Lipoma.jpg", 
+      caption: "Lipoma" 
+    },
+    { 
+      url: "https://raw.githubusercontent.com/glferreira-devsecops/manssurr/1b190ff8098e9140df2e4dc23eef29c1da9776a8/public/5%20Verrugas.jpg", 
+      caption: "Verrugas (Caso 2)" 
+    },
+    { 
+      url: "https://raw.githubusercontent.com/glferreira-devsecops/manssurr/1b190ff8098e9140df2e4dc23eef29c1da9776a8/public/10%20Dermatite.jpg", 
+      caption: "Dermatite" 
+    },
+    { 
+      url: "https://raw.githubusercontent.com/glferreira-devsecops/manssurr/1b190ff8098e9140df2e4dc23eef29c1da9776a8/public/15%20Nodular%20Nonpigmented%20Lesion.jpg", 
+      caption: "Nódulo" 
+    },
+    { 
+      url: "https://raw.githubusercontent.com/glferreira-devsecops/manssurr/1b190ff8098e9140df2e4dc23eef29c1da9776a8/public/12%20Herpes%20zooster.jpg", 
+      caption: "Herpes Zoster" 
+    },
+    { 
+      url: "https://raw.githubusercontent.com/glferreira-devsecops/manssurr/1b190ff8098e9140df2e4dc23eef29c1da9776a8/public/4%20Cancer%20Papilloma%20On%20The%20Skin.jpg", 
+      caption: "Papiloma" 
+    }
   ];
 
   return (
@@ -23,16 +50,24 @@ export const Gallery: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {clinicalCases.map((img, index) => (
+          {galleryImages.map((img, index) => (
             <div key={index} className="relative group overflow-hidden rounded-xl shadow-md aspect-square bg-slate-100">
               <img 
                 src={img.url} 
                 alt={img.caption} 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
+                onError={(e) => {
+                  // Fallback visual caso a imagem ainda falhe (não deve acontecer com a URL raw correta)
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement?.classList.add('bg-slate-200', 'flex', 'items-center', 'justify-center');
+                  if(e.currentTarget.parentElement) {
+                    e.currentTarget.parentElement.innerHTML = `<span class="text-xs text-slate-400 p-2 text-center">Imagem indisponível</span>`;
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-100 flex items-end p-4">
-                <p className="text-white font-medium text-sm border-l-2 border-medical-500 pl-2">{img.caption}</p>
+                <p className="text-white font-medium text-sm border-l-2 border-medical-500 pl-2 shadow-sm">{img.caption}</p>
               </div>
             </div>
           ))}
