@@ -1,40 +1,38 @@
 import React from 'react';
 
 export const Gallery: React.FC = () => {
-  // Placeholders profissionais para simular "IMAGENS (em anexo)"
-  const images = [
-    {
-      url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop",
-      caption: "Ambiente Clínico"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop",
-      caption: "Materiais Esterilizados"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
-      caption: "Consultório"
-    }
+  // Imagens fornecidas e suas legendas associadas
+  const clinicalCases = [
+    { url: "./img_5042.jpg", caption: "Lipoma" },
+    { url: "./img_5035.jpg", caption: "Sinal / Nevo" },
+    { url: "./img_5048.jpg", caption: "Lesão Cutânea" },
+    { url: "./img_5038.jpg", caption: "Verrugas" },
+    { url: "./img_5040.jpg", caption: "Nódulo" },
+    { url: "./img_5046.jpg", caption: "Cisto Facial" },
+    { url: "./img_5045.jpg", caption: "Lesão de Pele" },
+    { url: "./img_5043.jpg", caption: "Dermatite" }
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section id="gallery" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="text-medical-600 font-bold text-xs tracking-[0.2em] uppercase mb-3 block">GALERIA</span>
-          <h2 className="text-3xl font-serif font-bold text-slate-900">Nosso Espaço</h2>
+          <span className="text-medical-600 font-bold text-xs tracking-[0.2em] uppercase mb-3 block">GALERIA DE CASOS</span>
+          <h2 className="text-3xl font-serif font-bold text-slate-900 mb-4">Casos Tratáveis</h2>
+          <p className="text-slate-600 max-w-2xl mx-auto">Exemplos de patologias que tratamos com segurança e eficiência.</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {images.map((img, index) => (
-            <div key={index} className="relative group overflow-hidden rounded-2xl shadow-md aspect-[4/3]">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {clinicalCases.map((img, index) => (
+            <div key={index} className="relative group overflow-hidden rounded-xl shadow-md aspect-square bg-slate-100">
               <img 
                 src={img.url} 
                 alt={img.caption} 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <p className="text-white font-medium">{img.caption}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-100 flex items-end p-4">
+                <p className="text-white font-medium text-sm border-l-2 border-medical-500 pl-2">{img.caption}</p>
               </div>
             </div>
           ))}

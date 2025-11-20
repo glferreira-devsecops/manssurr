@@ -1,7 +1,6 @@
 import { 
   Scissors, 
   Microscope, 
-  Activity, 
   FileText, 
   Stethoscope,
   PlusCircle
@@ -9,13 +8,14 @@ import {
 import { DoctorInfo, ServiceItem } from './types';
 
 export const DOCTOR_INFO: DoctorInfo = {
-  name: "Dr. J. Mansur",
+  name: "Dr Mansur",
   crm: "CRM-RJ 34.702-6",
   experience: "Com mais de 40 anos de vasta experiência em medicina cirúrgica",
   education: "Médico formado por uma universidade federal do Rio de Janeiro",
   address: "Rua Oto de Alencar, nº 35, Maracanã",
-  phone: "21 98822-0502",
-  whatsappClean: "5521988220502"
+  phone: "21 96515-7097",
+  whatsappClean: "5521965157097",
+  instagram: "@drmansurbiopsias"
 };
 
 export const SERVICES: ServiceItem[] = [

@@ -23,6 +23,7 @@ export const Header: React.FC = () => {
   const navLinks = [
     { name: 'Início', href: '#home' },
     { name: 'Serviços', href: '#services' },
+    { name: 'Galeria', href: '#gallery' },
     { name: 'Contato', href: '#contact' },
   ];
 
@@ -37,9 +38,9 @@ export const Header: React.FC = () => {
                 href="#home" 
                 className="flex flex-col group" 
                 onClick={closeMenu}
-                aria-label="Dr. Mansur - Voltar ao início"
+                aria-label="Dr Mansur - Voltar ao início"
               >
-                <span className="font-serif text-xl md:text-2xl font-bold text-medical-900 group-hover:text-medical-700 transition-colors">Dr. Mansur</span>
+                <span className="font-serif text-xl md:text-2xl font-bold text-medical-900 group-hover:text-medical-700 transition-colors">Dr Mansur</span>
                 <span className="text-xs uppercase tracking-widest text-medical-600 font-bold group-hover:text-medical-500 transition-colors">Biópsias.com</span>
               </a>
             </div>
@@ -62,7 +63,7 @@ export const Header: React.FC = () => {
                 className="bg-medical-600 text-white px-6 py-2 rounded-full hover:bg-medical-700 transition-all hover:shadow-lg transform hover:-translate-y-0.5 flex items-center gap-2 font-medium"
               >
                 <Phone size={18} />
-                WhatsApp
+                Agende agora no whatsapp
               </a>
             </div>
 
@@ -137,13 +138,13 @@ export const Header: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="flex items-center justify-center gap-3 w-full bg-medical-600 text-white px-4 py-4 rounded-xl font-bold shadow-lg shadow-medical-600/20 active:bg-medical-700 hover:bg-medical-700 transition-all hover:-translate-y-0.5"
+              className="flex items-center justify-center gap-3 w-full bg-medical-600 text-white px-4 py-4 rounded-xl font-bold shadow-lg shadow-medical-600/20 active:bg-medical-700 hover:bg-medical-700 transition-all hover:-translate-y-0.5 text-sm"
             >
               <Phone size={20} />
-              <span>Falar no WhatsApp</span>
+              <span>Agende agora no whatsapp</span>
             </a>
             <div className="text-center text-xs text-slate-400">
-               Dr. Mansur - CRM {DOCTOR_INFO.crm}
+               Dr Mansur - CRM {DOCTOR_INFO.crm}
             </div>
           </div>
         </div>

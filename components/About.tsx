@@ -22,7 +22,7 @@ export const About: React.FC = () => {
               </div>
               
               <p className="text-slate-600 text-lg leading-relaxed font-light text-justify md:text-left">
-                Com uma carreira dedicada à medicina cirúrgica, o Dr. Mansur oferece um atendimento de excelência focado na resolução eficiente de pequenas patologias. Sua formação sólida e décadas de prática diária garantem a precisão técnica e o olhar humano que cada paciente merece.
+                Com uma carreira dedicada à medicina cirúrgica, o Dr Mansur oferece um atendimento de excelência focado na resolução eficiente de pequenas patologias. Sua formação sólida e décadas de prática diária garantem a precisão técnica e o olhar humano que cada paciente merece.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 pt-4">

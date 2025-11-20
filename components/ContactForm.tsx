@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Smartphone, MapPin } from 'lucide-react';
+import { Send, Smartphone, Instagram } from 'lucide-react';
 import { DOCTOR_INFO } from '../constants';
 
 export const ContactForm: React.FC = () => {
@@ -30,7 +30,7 @@ export const ContactForm: React.FC = () => {
                </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div className="flex items-center gap-4">
                 <div className="bg-green-500 p-3 rounded-full">
                   <Smartphone className="text-white" size={24} />
@@ -40,6 +40,21 @@ export const ContactForm: React.FC = () => {
                   <p className="text-xl font-bold">{DOCTOR_INFO.phone}</p>
                 </div>
               </div>
+
+              <a 
+                href={`https://instagram.com/${DOCTOR_INFO.instagram.replace('@', '')}`}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group w-fit"
+              >
+                <div className="bg-white p-3 rounded-full group-hover:bg-pink-50 transition-colors duration-300">
+                  <Instagram className="text-[#E1306C]" size={24} />
+                </div>
+                <div>
+                  <p className="text-sm text-medical-200 font-medium">INSTAGRAM</p>
+                  <p className="text-xl font-bold group-hover:text-pink-400 transition-colors duration-300">{DOCTOR_INFO.instagram}</p>
+                </div>
+              </a>
             </div>
           </div>
 
@@ -73,7 +88,7 @@ export const ContactForm: React.FC = () => {
                   className="w-full bg-green-600 text-white font-bold py-4 rounded-xl hover:bg-green-700 transition-all flex items-center justify-center gap-2"
                 >
                   <Send size={20} />
-                  Enviar para WhatsApp
+                  Agende agora no whatsapp
                 </button>
               </div>
             </form>

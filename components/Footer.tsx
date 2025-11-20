@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import { DOCTOR_INFO } from '../constants';
 
 export const Footer: React.FC = () => {
@@ -14,22 +14,22 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="mb-8">
-           <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-4">LINKs das REDES SOCIAIS</h4>
+           <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-4">REDES SOCIAIS</h4>
            <div className="flex justify-center gap-6">
-              <a href="#" className="text-slate-400 hover:text-medical-500 transition-colors p-2 bg-slate-900 rounded-full">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-slate-400 hover:text-medical-500 transition-colors p-2 bg-slate-900 rounded-full">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-slate-400 hover:text-medical-500 transition-colors p-2 bg-slate-900 rounded-full">
-                <Linkedin size={20} />
+              <a 
+                href={`https://instagram.com/${DOCTOR_INFO.instagram.replace('@', '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-pink-500 transition-colors p-3 bg-slate-900 rounded-full group"
+                aria-label={`Siga ${DOCTOR_INFO.name} no Instagram`}
+              >
+                <Instagram size={24} className="group-hover:scale-110 transition-transform" />
               </a>
            </div>
         </div>
 
         <div className="border-t border-slate-900 pt-8">
-          <p>&copy; {new Date().getFullYear()} Dr. Mansur Biópsias. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Dr Mansur Biópsias. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

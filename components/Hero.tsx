@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, User, Star, ShieldCheck } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Star, User } from 'lucide-react';
 import { DOCTOR_INFO } from '../constants';
 
 export const Hero: React.FC = () => {
   const [imageError, setImageError] = useState(false);
 
-  // URL de imagem profissional
-  const HERO_IMAGE_URL = "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1000&auto=format&fit=crop";
+  // URL da imagem do médico enviada
+  const HERO_IMAGE_URL = "./img_5050.jpg";
 
   return (
     <section id="home" className="relative pt-28 pb-20 md:pt-36 md:pb-32 overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-medical-50 via-white to-slate-50">
@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-7 mb-16 lg:mb-0 text-center lg:text-left">
             
             <h1 className="text-4xl md:text-5xl lg:text-[4.2rem] font-serif font-bold text-slate-900 leading-[1.1] mb-6 tracking-tight">
-              Dr. Mansur <br />
+              Dr Mansur <br />
               <span className="text-medical-600 relative inline-block">
                 Biópsias.com
               </span>
@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-green-600 text-white rounded-xl font-bold hover:bg-green-700 transition-all shadow-lg shadow-green-600/30 hover:-translate-y-1 flex items-center justify-center gap-2 group"
               >
-                Falar no WhatsApp
+                Agende agora no whatsapp
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a 
@@ -77,16 +77,23 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-5 relative mx-auto w-full max-w-md lg:max-w-full">
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-white border border-slate-100 aspect-[4/5] lg:h-[600px] flex items-center justify-center group">
               {!imageError ? (
-                <img 
-                  src={HERO_IMAGE_URL} 
-                  alt="Médico especialista Dr. Mansur" 
-                  className="w-full h-full object-cover"
-                  onError={() => setImageError(true)}
-                />
+                <>
+                  <img 
+                    src={HERO_IMAGE_URL} 
+                    alt="Dr Mansur" 
+                    className="w-full h-full object-cover"
+                    onError={() => setImageError(true)}
+                  />
+                  {/* Legenda/Overlay Nome do Médico */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-medical-900/90 to-transparent p-8 pt-24 text-center">
+                     <span className="text-white font-serif text-3xl font-bold block">Dr Mansur</span>
+                     <span className="text-medical-200 text-sm uppercase tracking-widest font-medium">Especialista</span>
+                  </div>
+                </>
               ) : (
                 <div className="flex flex-col items-center justify-center p-10 text-center bg-slate-50 w-full h-full">
                   <User size={80} className="text-medical-300 mb-4" />
-                  <h3 className="font-serif text-2xl font-bold text-slate-800">Dr. J. Mansur</h3>
+                  <h3 className="font-serif text-2xl font-bold text-slate-800">Dr Mansur</h3>
                 </div>
               )}
             </div>

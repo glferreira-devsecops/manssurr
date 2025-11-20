@@ -14,4 +14,5 @@ export interface DoctorInfo {
   address: string;
   phone: string;
   whatsappClean: string; // For API links
+  instagram: string;
 }
