@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
 import { DOCTOR_INFO } from '../constants';
 
 export const Footer: React.FC = () => {
@@ -28,8 +28,18 @@ export const Footer: React.FC = () => {
            </div>
         </div>
 
-        <div className="border-t border-slate-900 pt-8">
+        <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>&copy; {new Date().getFullYear()} Dr Mansur Biópsias. Todos os direitos reservados.</p>
+          
+          {/* Assinatura do Desenvolvedor */}
+          <a 
+            href="https://www.linkedin.com/in/devferreirag" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-slate-700 hover:text-slate-500 text-[10px] uppercase tracking-wider transition-colors duration-300 flex items-center gap-1.5 font-medium group"
+          >
+            Desenvolvido por <span className="text-slate-600 group-hover:text-slate-400 border-b border-transparent group-hover:border-slate-400 transition-all">Gabriel Ferreira</span>
+          </a>
         </div>
       </div>
     </footer>

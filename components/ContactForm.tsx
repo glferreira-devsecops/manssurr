@@ -26,7 +26,7 @@ export const ContactForm: React.FC = () => {
             
             <div className="bg-green-600/20 border border-green-500/30 p-6 rounded-xl mb-8 backdrop-blur-sm space-y-2">
                <p className="text-white font-bold text-lg leading-relaxed">
-                 Faça sua consulta on line para avalição sem compromisso gratuitamente <span className="text-green-400 whitespace-nowrap">{DOCTOR_INFO.phone}</span>
+                 Faça sua consulta on line para avaliação sem compromisso gratuitamente <span className="text-green-400 whitespace-nowrap">{DOCTOR_INFO.phone}</span>
                </p>
             </div>
 

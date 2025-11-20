@@ -37,7 +37,7 @@ export const Services: React.FC = () => {
 
         <div className="bg-green-50 border border-green-100 p-6 rounded-xl max-w-3xl mx-auto text-center shadow-sm">
           <p className="text-green-800 font-bold text-lg md:text-xl">
-            Faça sua consulta on line para avalição sem compromisso gratuitamente
+            Faça sua consulta on line para avaliação sem compromisso gratuitamente
           </p>
         </div>
       </div>

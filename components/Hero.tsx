@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
             <div className="bg-green-50 border border-green-100 p-4 rounded-xl mb-10 max-w-xl mx-auto lg:mx-0 shadow-sm">
               <p className="text-green-800 font-bold text-sm md:text-base flex items-center justify-center lg:justify-start gap-2">
                 <span className="flex h-3 w-3 rounded-full bg-green-500 animate-pulse"></span>
-                Faça sua consulta on line para avalição sem compromisso gratuitamente
+                Faça sua consulta on line para avaliação sem compromisso gratuitamente
               </p>
             </div>
             
