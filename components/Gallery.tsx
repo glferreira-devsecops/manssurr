@@ -1,16 +1,16 @@
 import React from 'react';
 
 export const Gallery: React.FC = () => {
-  // Imagens fornecidas e suas legendas associadas
+  // Imagens fornecidas e suas legendas associadas (devem estar na pasta public)
   const clinicalCases = [
-    { url: "./img_5042.jpg", caption: "Lipoma" },
-    { url: "./img_5035.jpg", caption: "Sinal / Nevo" },
-    { url: "./img_5048.jpg", caption: "Lesão Cutânea" },
-    { url: "./img_5038.jpg", caption: "Verrugas" },
-    { url: "./img_5040.jpg", caption: "Nódulo" },
-    { url: "./img_5046.jpg", caption: "Cisto Facial" },
-    { url: "./img_5045.jpg", caption: "Lesão de Pele" },
-    { url: "./img_5043.jpg", caption: "Dermatite" }
+    { url: "/img_5042.jpg", caption: "Lipoma" },
+    { url: "/img_5035.jpg", caption: "Sinal / Nevo" },
+    { url: "/img_5048.jpg", caption: "Lesão Cutânea" },
+    { url: "/img_5038.jpg", caption: "Verrugas" },
+    { url: "/img_5040.jpg", caption: "Nódulo" },
+    { url: "/img_5046.jpg", caption: "Cisto Facial" },
+    { url: "/img_5045.jpg", caption: "Lesão de Pele" },
+    { url: "/img_5043.jpg", caption: "Dermatite" }
   ];
 
   return (

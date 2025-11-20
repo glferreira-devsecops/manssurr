@@ -5,8 +5,8 @@ import { DOCTOR_INFO } from '../constants';
 export const Hero: React.FC = () => {
   const [imageError, setImageError] = useState(false);
 
-  // URL da imagem do médico enviada
-  const HERO_IMAGE_URL = "./img_5050.jpg";
+  // URL da imagem do médico (deve estar na pasta public)
+  const HERO_IMAGE_URL = "/img_5050.jpg";
 
   return (
     <section id="home" className="relative pt-28 pb-20 md:pt-36 md:pb-32 overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-medical-50 via-white to-slate-50">
