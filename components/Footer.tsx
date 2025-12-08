@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
 import { DOCTOR_INFO } from '../constants';
 
 export const Footer: React.FC = () => {
@@ -34,18 +34,19 @@ export const Footer: React.FC = () => {
         <div className="w-full border-t border-slate-900/50 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-600 text-xs">&copy; {new Date().getFullYear()} Dr Mansur Biópsias. Todos os direitos reservados.</p>
           
-          {/* Assinatura Profissional Minimalista */}
-          <a 
-            href="https://www.linkedin.com/in/devferreirag" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="group flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-slate-700 hover:text-slate-400 transition-all duration-500 font-medium"
-          >
-            <span>Desenvolvido por</span>
-            <span className="text-slate-600 group-hover:text-medical-400 border-b border-transparent group-hover:border-medical-400/30 pb-0.5 transition-all duration-300">
+          {/* Assinatura Profissional - Gabriel Ferreira */}
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] uppercase tracking-widest text-slate-700">Desenvolvido por</span>
+            <a 
+              href="https://www.linkedin.com/in/devferreirag" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-xs font-medium text-slate-500 hover:text-medical-400 transition-colors duration-300 group"
+            >
               Gabriel Ferreira
-            </span>
-          </a>
+              <Linkedin size={12} className="opacity-0 group-hover:opacity-100 transition-opacity -ml-1 group-hover:ml-0" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

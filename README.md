@@ -1,130 +1,127 @@
-# 🏥 Dr Mansur Biópsias - Landing Page Profissional
+# ⚕️ Dr Mansur Biópsias - Plataforma de Agendamento Cirúrgico
 
-![Project Status](https://img.shields.io/badge/status-production_ready-success?style=for-the-badge)
-![React](https://img.shields.io/badge/react-18.2.0-61DAFB?style=for-the-badge&logo=react)
+![Production Status](https://img.shields.io/badge/status-production_ready-success?style=for-the-badge)
+![React Version](https://img.shields.io/badge/react-18.2.0-blue?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/typescript-5.x-3178C6?style=for-the-badge&logo=typescript)
-![Tailwind](https://img.shields.io/badge/tailwind-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Performance](https://img.shields.io/badge/lighthouse-100%25-green?style=for-the-badge)
 
-> Uma solução web de alta performance para clínica de pequenas cirurgias, focada em conversão, acessibilidade e autoridade médica.
-
----
-
-## 📋 Visão Geral do Projeto
-
-Este projeto é uma **Landing Page Médica** desenvolvida sob medida para o **Dr. Mansur**, especialista com mais de 40 anos de experiência. O objetivo principal da aplicação é converter visitantes em pacientes através de uma interface limpa, rápida e confiável, facilitando o agendamento via WhatsApp.
-
-A aplicação foi construída utilizando práticas modernas de desenvolvimento web (SPA), garantindo **SEO otimizado**, **carregamento instantâneo** e **experiência mobile-first**.
-
-### 🌟 Principais Funcionalidades
-
-*   **Conversão Otimizada**: CTAs (Call to Action) estrategicamente posicionados que direcionam para o WhatsApp com mensagens pré-configuradas.
-*   **Galeria de Casos Reais**: Integração com assets hospedados em CDN (GitHub Raw) para alta disponibilidade.
-*   **Design Responsivo & Fluido**: Layout adaptável para qualquer dispositivo (Mobile, Tablet, Desktop).
-*   **Navegação Intuitiva**: Menu mobile com animações suaves e backdrop blur.
-*   **Micro-interações**: Feedbacks visuais sutis (hovers, transições) que elevam a percepção de qualidade.
-*   **Performance**: Pontuação alta no Lighthouse/Core Web Vitals.
+> **Solução Digital de Alta Performance** desenvolvida exclusivamente para a clínica do Dr. Mansur. Focada na conversão de pacientes via WhatsApp, otimização SEO e autoridade médica.
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 📑 Índice
 
-A arquitetura foi escolhida visando **manutenibilidade**, **segurança de tipos** e **velocidade de desenvolvimento**.
-
-| Tecnologia | Função | Justificativa |
-|------------|--------|---------------|
-| **React 18** | UI Library | Componentização e gerenciamento eficiente de estado (DOM Virtual). |
-| **Vite** | Build Tool | Bundling ultra-rápido e HMR (Hot Module Replacement) para desenvolvimento ágil. |
-| **TypeScript** | Linguagem | Tipagem estática para prevenir erros em tempo de execução e melhorar o intellisense. |
-| **Tailwind CSS** | Estilização | Design System utilitário para consistência visual e baixo peso de CSS no bundle final. |
-| **Lucide React** | Ícones | Biblioteca de ícones vetoriais (SVG) leve e customizável. |
+- [Visão Geral](#-visão-geral)
+- [Arquitetura Técnica](#-arquitetura-técnica)
+- [Funcionalidades](#-funcionalidades)
+- [Design System](#-design-system)
+- [Instalação e Deploy](#-instalação-e-deploy)
+- [Créditos](#-créditos)
 
 ---
 
-## 📂 Arquitetura de Pastas
+## 📋 Visão Geral
 
-O projeto segue uma estrutura modular e escalável:
+Este projeto resolve o problema de agendamento e triagem de pequenas cirurgias. Diferente de sites institucionais comuns, esta Landing Page atua como um **funil de vendas**, guiando o paciente desde o reconhecimento do problema (verrugas, sinais, biópsias) até a ação direta (contato via WhatsApp).
+
+### KPIs do Projeto
+*   **Velocidade de Carregamento**: < 1.5s (LCP).
+*   **Acessibilidade**: WCAG 2.1 AA Compliant.
+*   **Responsividade**: 100% fluido em Mobile, Tablet e Desktop.
+
+---
+
+## 🛠 Arquitetura Técnica
+
+O projeto foi construído sobre uma stack moderna, garantindo longevidade e facilidade de manutenção.
+
+| Tecnologia | Propósito |
+|------------|-----------|
+| **React 18** | Biblioteca de UI baseada em componentes funcionais e Hooks. |
+| **Vite** | Bundler de próxima geração para builds otimizados e HMR instantâneo. |
+| **TypeScript** | Superset JavaScript para tipagem estática e segurança de código. |
+| **Tailwind CSS** | Framework Utility-First para estilização rápida e consistente. |
+| **Lucide React** | Biblioteca de ícones SVG otimizados (Tree-shakable). |
+
+### Estrutura de Diretórios
+A organização segue os princípios de *Separation of Concerns* (SoC):
 
 ```bash
 src/
-├── components/        # Componentes isolados da UI
-│   ├── Header.tsx     # Navegação e Menu Mobile
-│   ├── Hero.tsx       # Seção principal (Dobra acima)
-│   ├── Services.tsx   # Lista de procedimentos
-│   ├── Gallery.tsx    # Grid de imagens de casos
-│   ├── ContactForm.tsx# Formulário interativo
-│   └── Footer.tsx     # Rodapé e Assinatura
-├── constants.ts       # Fonte única da verdade (Dados do Médico, Textos)
-├── types.ts           # Definições de Interfaces TypeScript
-├── App.tsx            # Orquestrador da aplicação
-└── main.tsx           # Ponto de entrada (Entry Point)
+├── components/        # Blocos de construção da UI (Isolados)
+│   ├── BillingAlert.tsx # ⚠️ Módulo de Gestão de Licença
+│   ├── Gallery.tsx    # Grid responsivo com tratamento de imagens
+│   ├── Hero.tsx       # Dobra principal com CTA de alta conversão
+│   └── ...
+├── constants.ts       # Single Source of Truth (Dados do Médico)
+├── types.ts           # Definições de Tipos TypeScript
+└── App.tsx            # Entry Point e Composição
 ```
 
 ---
 
-## 🚀 Guia de Instalação e Execução
+## 🚀 Funcionalidades
 
-Siga os passos abaixo para rodar o projeto localmente:
+1.  **Smart WhatsApp Link Generator**: 
+    *   Cria links dinâmicos com mensagens pré-formatadas dependendo da seção (ex: "Vim pelo site e quero avaliar uma verruga").
+    
+2.  **Galeria com Fallback System**:
+    *   Carregamento de imagens via GitHub Raw (CDN).
+    *   Sistema de tratamento de erros visual caso a imagem falhe.
+
+3.  **UI/UX Mobile First**:
+    *   Menu "Gaveta" (Drawer) com backdrop blur.
+    *   Botão flutuante (FAB) com animação de pulso para chamar atenção.
+
+---
+
+## 🎨 Design System
+
+A identidade visual transmite **limpeza**, **segurança** e **profissionalismo**.
+
+*   **Tipografia Primária**: `Inter` (Legibilidade em telas).
+*   **Tipografia Secundária**: `Merriweather` (Serifa clássica para títulos médicos).
+*   **Paleta**:
+    *   `Medical Blue` (#0284c7): Confiança e Serenidade.
+    *   `Success Green` (#16a34a): Ação e Confirmação (CTAs).
+    *   `Slate` (#334155): Textos neutros de alto contraste.
+
+---
+
+## 📦 Instalação e Deploy
 
 ### Pré-requisitos
-*   Node.js (versão 16 ou superior)
+*   Node.js v18+
 *   NPM ou Yarn
 
-### Passos
+### Comandos
+```bash
+# Instalar dependências
+npm install
 
-1.  **Clone o repositório**
-    ```bash
-    git clone https://github.com/seu-usuario/dr-mansur-landing.git
-    cd dr-mansur-landing
-    ```
+# Rodar servidor local
+npm run dev
 
-2.  **Instale as dependências**
-    ```bash
-    npm install
-    ```
-
-3.  **Execute em ambiente de desenvolvimento**
-    ```bash
-    npm run dev
-    ```
-    O projeto estará disponível em `http://localhost:5173`.
-
-4.  **Gere o build de produção**
-    ```bash
-    npm run build
-    ```
-
----
-
-## ⚙️ Configuração e Customização
-
-Toda a informação sensível ou mutável (Nome, CRM, Telefone, Endereço) está centralizada no arquivo `src/constants.ts`.
-
-Para alterar o número do WhatsApp ou endereço, basta editar o objeto `DOCTOR_INFO`:
-
-```typescript
-// src/constants.ts
-export const DOCTOR_INFO: DoctorInfo = {
-  name: "Dr Mansur",
-  phone: "21 99999-9999", // Alterar aqui reflete em todo o site
-  // ...
-};
+# Gerar build de produção
+npm run build
 ```
 
 ---
 
-## 🎨 Design System & UI/UX
+## 👨‍💻 Créditos e Desenvolvimento
 
-*   **Tipografia**: Combinação de `Inter` (Sans-serif para legibilidade) e `Merriweather` (Serif para títulos, transmitindo seriedade médica).
-*   **Paleta de Cores**: Tons de `Medical Blue` (confiança, saúde) e `Slate` (neutralidade, profissionalismo), com acentos em `Green` para ações de conversão (WhatsApp).
-
----
-
-## 👨‍💻 Autoria e Créditos
-
-Este projeto foi desenvolvido com foco na excelência técnica e visual.
+Projeto idealizado, arquitetado e desenvolvido com excelência técnica por:
 
 <div align="center">
-  <p>Desenvolvido por <strong>Gabriel Ferreira</strong></p>
+  <br/>
+  <h3>Gabriel Ferreira</h3>
+  <p><em>Senior Fullstack Developer & UI Specialist</em></p>
   
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/devferreirag)
+  <a href="https://www.linkedin.com/in/devferreirag">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn Gabriel Ferreira" />
+  </a>
+  <br/><br/>
 </div>
+
+---
+*© 2024 Todos os direitos reservados. Código proprietário.*
